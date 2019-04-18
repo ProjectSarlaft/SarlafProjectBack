@@ -33,7 +33,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
@@ -68,6 +67,17 @@
 					</formats>
 					<check/>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<!-- CircleCI build workaround -->
+					<argLine>${surefireArgLine} -Xms1024m -Xmx2048m</argLine>
+					<reuseForks>true</reuseForks>
+					<useSystemClassLoader>false</useSystemClassLoader>
+				</configuration>
+				<version>2.20.1</version><!--$NO-MVN-MAN-VER$-->
 			</plugin>
 		</plugins>
 	</build>
