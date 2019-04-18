@@ -40,9 +40,9 @@
        # run tests!
        - run: mvn integration-test
 
-        - store_test_results:
-          path: target/site/jacoco
+       - store_test_results:
+           path: target/site/jacoco
 
        - run:
-          name: Send to CodeCov
-          command: bash <(curl -s https://codecov.io/bash)
+           name: Send to CodeCov
+           command: bash <(curl -s https://codecov.io/bash)
