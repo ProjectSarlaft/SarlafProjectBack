@@ -41,7 +41,7 @@
        - run: mvn integration-test
 
        - store_test_results:
-           path: target/site/jacoco
+           path: target/surefire-reports
 
        - run:
            name: Send to CodeCov
