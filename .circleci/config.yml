@@ -40,8 +40,8 @@
        # run tests!
        - run: mvn integration-test
 
-       - store_test_results:
-           path: target/surefire-reports
+       - store_artifacts:
+           path:  target
 
        - run:
            name: Send to CodeCov
