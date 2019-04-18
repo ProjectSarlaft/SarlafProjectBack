@@ -4,7 +4,7 @@ import com.BackProject.BackProject.domain.Identification;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
-public interface Repositorio extends JpaRepository<Identification, String> {
+public interface IdentificacionRepositorio extends JpaRepository<Identification, String> {
 }
 
 

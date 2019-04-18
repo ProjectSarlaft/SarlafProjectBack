@@ -1,16 +1,16 @@
 package com.BackProject.BackProject.services;
 
 import com.BackProject.BackProject.domain.Identification;
-import com.BackProject.BackProject.repositories.Repositorio;
+import com.BackProject.BackProject.repositories.IdentificacionRepositorio;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class ServiceIndentificacionImpl implements ServiceIdentificacion {
-    private final Repositorio repositorio;
+    private final IdentificacionRepositorio repositorio;
 
-    public ServiceIndentificacionImpl(Repositorio repositorio) {
+    public ServiceIndentificacionImpl(IdentificacionRepositorio repositorio) {
         this.repositorio = repositorio;
     }
 
