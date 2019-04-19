@@ -16,7 +16,7 @@ jobs:
       - run: mvn test
       - run: "mvn cobertura:cobertura"
       - store_test_results:
-          path: target/surefire-reports
+          path: target/site/jacoco
       - run: "bash <(curl -s https://codecov.io/bash)"
       - save_cache:
           paths:
