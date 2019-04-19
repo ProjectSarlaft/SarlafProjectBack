@@ -24,7 +24,7 @@ public class ServiceIndentificacionImplTest {
 
     @Test
     public void getAllIdentificationTest() {
-        //When
+        //Given
         Mockito.when(identificacionRepositorio.findAll()).thenReturn(prepareListToReturn());
 
         //When
@@ -33,6 +33,19 @@ public class ServiceIndentificacionImplTest {
         //Then
         Assert.assertTrue(!lista.isEmpty());
     }
+
+    @Test
+    public void saveIdentification(){
+        // Given
+        Mockito.when(identificacionRepositorio.save(Mockito.any(Identification.class))).thenReturn(new Identification());
+
+        //When
+        Identification newIdentification = serviceIndentificacion.saveIdentification(new Identification());
+
+        //Then
+        Assert.assertTrue(newIdentification != null);
+    }
+
 
     private List<Identification> prepareListToReturn() {
         List<Identification> list = new ArrayList<>();
