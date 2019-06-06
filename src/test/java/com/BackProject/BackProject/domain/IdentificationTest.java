@@ -10,12 +10,9 @@ public class IdentificationTest {
 
     Identification identification;
 
-    private static final String RISK_ID = "riskId";
     private static final String PROCEDURE = "procedure";
-    private static final String CODE = "code";
     private static final String RISK = "risk";
     private static final String DESCRIPTION = "description";
-    private static final String CAUSE= "cause";
     private static final String LEGAL_RISK = "legal_risk";
     private static final String OPERATIVE_RISK = "operative_risk";
     private static final String CONTAGIOUS_RISK = "contagious_risk";
@@ -24,7 +21,7 @@ public class IdentificationTest {
     private static final String RISK_PRODUCTS = "risk_products";
     private static final String RISK_DISTRIBUTION = "risk_distribution";
     private static final String RISK_JURISDICTION = "risk_jurisdiction";
-    private static final String IDENTIFICATION_TO_STRING = "Identification{risk_id='riskId', procedure='procedure', code='code', risk='risk', description='description', cause='cause', legal_risk='legal_risk', operative_risk='operative_risk', contagious_risk='contagious_risk', reputational_risk='reputational_risk', risk_client='risk_client', risk_products='risk_products', risk_distribution='risk_distribution', risk_jurisdiction='risk_jurisdiction'}";
+    private static final String IDENTIFICATION_TO_STRING = "Identification{riesgo='risk', proceso='procedure', descripcion='description', riesgoLegal='legal_risk', riesgoOperativo='operative_risk', riesgoContagio='contagious_risk', riesgoReputacional='reputational_risk', riesgoCliente='risk_client', riesgoProductos='risk_products', riesgoDistribucion='risk_distribution', riesgoJurisdiccion='risk_jurisdiction'}";
 
     @Before
     public void setUp() throws Exception {
@@ -35,37 +32,31 @@ public class IdentificationTest {
     public void Identificattion(){
         //When
 
-        identification.setRisk_id(RISK_ID);
-        identification.setProcedure(PROCEDURE);
-        identification.setCode(CODE);
-        identification.setRisk(RISK);
+        identification.setProceso(PROCEDURE);
+        identification.setRiesgo(RISK);
         identification.setDescripcion(DESCRIPTION);
-        identification.setCause(CAUSE);
-        identification.setLegal_risk(LEGAL_RISK);
-        identification.setOperative_risk(OPERATIVE_RISK);
-        identification.setContagious_risk(CONTAGIOUS_RISK);
-        identification.setReputational_risk(REPUTATIONAL_RISK);
-        identification.setRisk_client(RISK_CLIENT);
-        identification.setRisk_products(RISK_PRODUCTS);
-        identification.setRisk_distribution(RISK_DISTRIBUTION);
-        identification.setRisk_jurisdiction(RISK_JURISDICTION);
+        identification.setRiesgoLegal(LEGAL_RISK);
+        identification.setRiesgoOperativo(OPERATIVE_RISK);
+        identification.setRiesgoContagio(CONTAGIOUS_RISK);
+        identification.setRiesgoReputacional(REPUTATIONAL_RISK);
+        identification.setRiesgoCliente(RISK_CLIENT);
+        identification.setRiesgoProductos(RISK_PRODUCTS);
+        identification.setRiesgoDistribucion(RISK_DISTRIBUTION);
+        identification.setRiesgoJurisdiccion(RISK_JURISDICTION);
 
         // Then
 
-        Assert.assertEquals(identification.getRisk_id(), RISK_ID);
-        Assert.assertEquals(identification.getProcedure(), PROCEDURE);
-        Assert.assertEquals(identification.getCode(), CODE);
-        Assert.assertEquals(identification.getRisk(), RISK);
-        Assert.assertEquals(identification.getDescription(), DESCRIPTION);
-        Assert.assertEquals(identification.getCause(), CAUSE);
-        Assert.assertEquals(identification.getLegal_risks(), LEGAL_RISK);
-        Assert.assertEquals(identification.getOperative_risk(), OPERATIVE_RISK);
-        Assert.assertEquals(identification.getContagious_risk(), CONTAGIOUS_RISK);
-        Assert.assertEquals(identification.getReputational_risk(), REPUTATIONAL_RISK);
-        Assert.assertEquals(identification.getRisk_client(), RISK_CLIENT);
-        Assert.assertEquals(identification.getRisk_products(), RISK_PRODUCTS);
-        Assert.assertEquals(identification.getRisk_distribution(), RISK_DISTRIBUTION);
-        Assert.assertEquals(identification.getRisk_jurisdiction(), RISK_JURISDICTION);
+        Assert.assertEquals(identification.getProceso(), PROCEDURE);
+        Assert.assertEquals(identification.getRiesgo(), RISK);
+        Assert.assertEquals(identification.getDescripcion(), DESCRIPTION);
+        Assert.assertEquals(identification.getRiesgoLegal(), LEGAL_RISK);
+        Assert.assertEquals(identification.getRiesgoOperativo(), OPERATIVE_RISK);
+        Assert.assertEquals(identification.getRiesgoContagio(), CONTAGIOUS_RISK);
+        Assert.assertEquals(identification.getRiesgoReputacional(), REPUTATIONAL_RISK);
+        Assert.assertEquals(identification.getRiesgoCliente(), RISK_CLIENT);
+        Assert.assertEquals(identification.getRiesgoProductos(), RISK_PRODUCTS);
+        Assert.assertEquals(identification.getRiesgoDistribucion(), RISK_DISTRIBUTION);
+        Assert.assertEquals(identification.getRiesgoJurisdiccion(), RISK_JURISDICTION);
         Assert.assertEquals(identification.toString(), IDENTIFICATION_TO_STRING);
     }
 

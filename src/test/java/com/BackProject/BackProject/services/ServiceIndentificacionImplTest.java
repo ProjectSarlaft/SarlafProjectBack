@@ -51,20 +51,14 @@ public class ServiceIndentificacionImplTest {
         List<Identification> list = new ArrayList<>();
 
         Identification identificationOne = new Identification();
-        identificationOne.setCode("1");
-        identificationOne.setCause("causa1");
         identificationOne.setDescripcion("desc1");
 
 
         Identification identificationTwo = new Identification();
-        identificationTwo.setCode("1");
-        identificationTwo.setCause("causa1");
         identificationTwo.setDescripcion("desc1");
 
 
         Identification identificationThree = new Identification();
-        identificationThree.setCode("1");
-        identificationThree.setCause("causa1");
         identificationThree.setDescripcion("desc1");
 
         list.add(identificationOne);

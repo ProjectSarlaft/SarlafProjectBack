@@ -11,177 +11,141 @@ public class Identification {
 
 
     @Id
-    @Column(name = "risk_id")
-    private String risk_id;
+    @Column(name = "riesgo")
+    private String riesgo;
 
-    @Column(name = "procedure")
-    private String procedure;
+    @Column(name = "proceso")
+    private String proceso;
 
-    @Column(name = "code")
-    private String code;
+    @Column(name = "descripcion")
+    private String descripcion;
 
-    @Column(name = "risk")
-    private String risk;
+    @Column(name = "riesgoLegal")
+    private String riesgoLegal;
 
-    @Column(name = "description")
-    private String description;
+    @Column(name = "riesgoOperativo")
+    private String riesgoOperativo;
 
-    @Column(name = "cause")
-    private String cause;
+    @Column(name = "riesgoContagio")
+    private String riesgoContagio;
 
-    @Column(name = "legal_risk")
-    private String legal_risk;
+    @Column(name = "riesgoReputacional")
+    private String riesgoReputacional;
 
-    @Column(name = "operative_risk")
-    private String operative_risk;
+    @Column(name = "riesgoCliente")
+    private String riesgoCliente;
 
-    @Column(name = "contagious_risk")
-    private String contagious_risk;
+    @Column(name = "riesgoProductos")
+    private String riesgoProductos;
 
-    @Column(name = "reputational_risk")
-    private String reputational_risk;
+    @Column(name = "riesgoDistribucion")
+    private String riesgoDistribucion;
 
-    @Column(name = "risk_client")
-    private String risk_client;
+    @Column(name = "riesgoJurisdiccion")
+    private String riesgoJurisdiccion;
 
-    @Column(name = "risk_products")
-    private String risk_products;
-
-    @Column(name = "risk_distribution")
-    private String risk_distribution;
-
-    @Column(name = "risk_jurisdiction")
-    private String risk_jurisdiction;
-
-    public String getRisk_id() {
-        return risk_id;
+    public String getRiesgo() {
+        return riesgo;
     }
 
-    public void setRisk_id(String risk_id) {
-        this.risk_id = risk_id;
+    public void setRiesgo(String riesgo) {
+        this.riesgo = riesgo;
     }
 
-    public String getProcedure() {
-        return procedure;
+    public String getProceso() {
+        return proceso;
     }
 
-    public void setProcedure(String procedure) {
-        this.procedure = procedure;
+    public void setProceso(String proceso) {
+        this.proceso = proceso;
     }
 
-    public String getCode() {
-        return code;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
-    public String getRisk() {
-        return risk;
+    public String getRiesgoLegal() {
+        return riesgoLegal;
     }
 
-    public void setRisk(String risk) {
-        this.risk = risk;
+    public void setRiesgoLegal(String riesgoLegal) {
+        this.riesgoLegal = riesgoLegal;
     }
 
-    public String getDescription() {
-        return description;
+    public String getRiesgoOperativo() {
+        return riesgoOperativo;
     }
 
-    public void setDescripcion(String description) {
-        this.description = description;
+    public void setRiesgoOperativo(String riesgoOperativo) {
+        this.riesgoOperativo = riesgoOperativo;
     }
 
-    public String getCause() {
-        return cause;
+    public String getRiesgoContagio() {
+        return riesgoContagio;
     }
 
-    public void setCause(String cause) {
-        this.cause = cause;
+    public void setRiesgoContagio(String riesgoContagio) {
+        this.riesgoContagio = riesgoContagio;
     }
 
-    public String getLegal_risks() {
-        return legal_risk;
+    public String getRiesgoReputacional() {
+        return riesgoReputacional;
     }
 
-    public void setLegal_risk(String legal_risk) {
-        this.legal_risk = legal_risk;
+    public void setRiesgoReputacional(String riesgoReputacional) {
+        this.riesgoReputacional = riesgoReputacional;
     }
 
-    public String getOperative_risk() {
-        return operative_risk;
+    public String getRiesgoCliente() {
+        return riesgoCliente;
     }
 
-    public void setOperative_risk(String operative_risk) {
-        this.operative_risk = operative_risk;
+    public void setRiesgoCliente(String riesgoCliente) {
+        this.riesgoCliente = riesgoCliente;
     }
 
-    public String getContagious_risk() {
-        return contagious_risk;
+    public String getRiesgoProductos() {
+        return riesgoProductos;
     }
 
-    public void setContagious_risk(String contagious_risk) {
-        this.contagious_risk = contagious_risk;
+    public void setRiesgoProductos(String riesgoProductos) {
+        this.riesgoProductos = riesgoProductos;
     }
 
-    public String getReputational_risk() {
-        return reputational_risk;
+    public String getRiesgoDistribucion() {
+        return riesgoDistribucion;
     }
 
-    public void setReputational_risk(String reputational_risk) {
-        this.reputational_risk = reputational_risk;
+    public void setRiesgoDistribucion(String riesgoDistribucion) {
+        this.riesgoDistribucion = riesgoDistribucion;
     }
 
-    public String getRisk_client() {
-        return risk_client;
+    public String getRiesgoJurisdiccion() {
+        return riesgoJurisdiccion;
     }
 
-    public void setRisk_client(String risk_client) {
-        this.risk_client = risk_client;
-    }
-
-    public String getRisk_products() {
-        return risk_products;
-    }
-
-    public void setRisk_products(String risk_products) {
-        this.risk_products = risk_products;
-    }
-
-    public String getRisk_distribution() {
-        return risk_distribution;
-    }
-
-    public void setRisk_distribution(String risk_distribution) {
-        this.risk_distribution = risk_distribution;
-    }
-
-    public String getRisk_jurisdiction() {
-        return risk_jurisdiction;
-    }
-
-    public void setRisk_jurisdiction(String risk_jurisdiction) {
-        this.risk_jurisdiction = risk_jurisdiction;
+    public void setRiesgoJurisdiccion(String riesgoJurisdiccion) {
+        this.riesgoJurisdiccion = riesgoJurisdiccion;
     }
 
     @Override
     public String toString() {
         return "Identification{" +
-                "risk_id='" + risk_id + '\'' +
-                ", procedure='" + procedure + '\'' +
-                ", code='" + code + '\'' +
-                ", risk='" + risk + '\'' +
-                ", description='" + description + '\'' +
-                ", cause='" + cause + '\'' +
-                ", legal_risk='" + legal_risk + '\'' +
-                ", operative_risk='" + operative_risk + '\'' +
-                ", contagious_risk='" + contagious_risk + '\'' +
-                ", reputational_risk='" + reputational_risk + '\'' +
-                ", risk_client='" + risk_client + '\'' +
-                ", risk_products='" + risk_products + '\'' +
-                ", risk_distribution='" + risk_distribution + '\'' +
-                ", risk_jurisdiction='" + risk_jurisdiction + '\'' +
+                "riesgo='" + riesgo + '\'' +
+                ", proceso='" + proceso + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", riesgoLegal='" + riesgoLegal + '\'' +
+                ", riesgoOperativo='" + riesgoOperativo + '\'' +
+                ", riesgoContagio='" + riesgoContagio + '\'' +
+                ", riesgoReputacional='" + riesgoReputacional + '\'' +
+                ", riesgoCliente='" + riesgoCliente + '\'' +
+                ", riesgoProductos='" + riesgoProductos + '\'' +
+                ", riesgoDistribucion='" + riesgoDistribucion + '\'' +
+                ", riesgoJurisdiccion='" + riesgoJurisdiccion + '\'' +
                 '}';
     }
 }
