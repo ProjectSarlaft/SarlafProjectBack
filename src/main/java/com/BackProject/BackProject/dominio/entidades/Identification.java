@@ -1,4 +1,4 @@
-package com.BackProject.BackProject.domain;
+package com.BackProject.BackProject.dominio.entidades;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Identification")
+@Table(name = "IdentificationDTO")
 public class Identification {
 
 
@@ -21,28 +21,28 @@ public class Identification {
     private String descripcion;
 
     @Column(name = "riesgoLegal")
-    private String riesgoLegal;
+    private Boolean riesgoLegal;
 
     @Column(name = "riesgoOperativo")
-    private String riesgoOperativo;
+    private Boolean riesgoOperativo;
 
     @Column(name = "riesgoContagio")
-    private String riesgoContagio;
+    private Boolean riesgoContagio;
 
     @Column(name = "riesgoReputacional")
-    private String riesgoReputacional;
+    private Boolean riesgoReputacional;
 
     @Column(name = "riesgoCliente")
-    private String riesgoCliente;
+    private Boolean riesgoCliente;
 
     @Column(name = "riesgoProductos")
-    private String riesgoProductos;
+    private Boolean riesgoProductos;
 
     @Column(name = "riesgoDistribucion")
-    private String riesgoDistribucion;
+    private Boolean riesgoDistribucion;
 
     @Column(name = "riesgoJurisdiccion")
-    private String riesgoJurisdiccion;
+    private Boolean riesgoJurisdiccion;
 
     public String getRiesgo() {
         return riesgo;
@@ -68,73 +68,73 @@ public class Identification {
         this.descripcion = descripcion;
     }
 
-    public String getRiesgoLegal() {
+    public Boolean getRiesgoLegal() {
         return riesgoLegal;
     }
 
-    public void setRiesgoLegal(String riesgoLegal) {
+    public void setRiesgoLegal(Boolean riesgoLegal) {
         this.riesgoLegal = riesgoLegal;
     }
 
-    public String getRiesgoOperativo() {
+    public Boolean getRiesgoOperativo() {
         return riesgoOperativo;
     }
 
-    public void setRiesgoOperativo(String riesgoOperativo) {
+    public void setRiesgoOperativo(Boolean riesgoOperativo) {
         this.riesgoOperativo = riesgoOperativo;
     }
 
-    public String getRiesgoContagio() {
+    public Boolean getRiesgoContagio() {
         return riesgoContagio;
     }
 
-    public void setRiesgoContagio(String riesgoContagio) {
+    public void setRiesgoContagio(Boolean riesgoContagio) {
         this.riesgoContagio = riesgoContagio;
     }
 
-    public String getRiesgoReputacional() {
+    public Boolean getRiesgoReputacional() {
         return riesgoReputacional;
     }
 
-    public void setRiesgoReputacional(String riesgoReputacional) {
+    public void setRiesgoReputacional(Boolean riesgoReputacional) {
         this.riesgoReputacional = riesgoReputacional;
     }
 
-    public String getRiesgoCliente() {
+    public Boolean getRiesgoCliente() {
         return riesgoCliente;
     }
 
-    public void setRiesgoCliente(String riesgoCliente) {
+    public void setRiesgoCliente(Boolean riesgoCliente) {
         this.riesgoCliente = riesgoCliente;
     }
 
-    public String getRiesgoProductos() {
+    public Boolean getRiesgoProductos() {
         return riesgoProductos;
     }
 
-    public void setRiesgoProductos(String riesgoProductos) {
+    public void setRiesgoProductos(Boolean riesgoProductos) {
         this.riesgoProductos = riesgoProductos;
     }
 
-    public String getRiesgoDistribucion() {
+    public Boolean getRiesgoDistribucion() {
         return riesgoDistribucion;
     }
 
-    public void setRiesgoDistribucion(String riesgoDistribucion) {
+    public void setRiesgoDistribucion(Boolean riesgoDistribucion) {
         this.riesgoDistribucion = riesgoDistribucion;
     }
 
-    public String getRiesgoJurisdiccion() {
+    public Boolean getRiesgoJurisdiccion() {
         return riesgoJurisdiccion;
     }
 
-    public void setRiesgoJurisdiccion(String riesgoJurisdiccion) {
+    public void setRiesgoJurisdiccion(Boolean riesgoJurisdiccion) {
         this.riesgoJurisdiccion = riesgoJurisdiccion;
     }
 
     @Override
     public String toString() {
-        return "Identification{" +
+        return "IdentificationDTO{" +
                 "riesgo='" + riesgo + '\'' +
                 ", proceso='" + proceso + '\'' +
                 ", descripcion='" + descripcion + '\'' +
