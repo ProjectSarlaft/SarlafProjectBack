@@ -4,8 +4,10 @@ import com.BackProject.BackProject.dominio.dto.IdentificationDTO;
 import com.BackProject.BackProject.dominio.entidades.Identification;
 import com.BackProject.BackProject.dominio.mapper.IdentificacionMapper;
 import com.BackProject.BackProject.exceptions.InsercionIdentificacionException;
+import com.BackProject.BackProject.exceptions.NoRegistroIdentificacionException;
 import com.BackProject.BackProject.exceptions.SinRegistrosDeIdentificacionException;
 import com.BackProject.BackProject.repositorios.IdentificacionRepositorio;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -39,4 +41,13 @@ public class ServiceIndentificacionImpl implements ServiceIdentificacion {
         if (registroIdentificacionInsertado == null) throw new InsercionIdentificacionException();
         return identificacionMapper.identificacionEntityToDTO(registroIdentificacionInsertado);
     }
-}
+
+    @Override
+    public void borrarIdentificacion(String riesgo) {
+        try {
+            identificacionRepositorio.deleteById(riesgo);
+        } catch (EmptyResultDataAccessException e) {
+            throw new NoRegistroIdentificacionException("No se encontro registro para el Id solicitado");
+        }
+        }
+    }

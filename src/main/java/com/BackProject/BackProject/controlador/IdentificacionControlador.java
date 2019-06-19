@@ -17,17 +17,24 @@ public class IdentificacionControlador {
     }
 
     @CrossOrigin
-    @PostMapping
+    @PostMapping("/identificacion")
     @ResponseStatus(HttpStatus.CREATED)
-    public IdentificationDTO crearIdentificacion(@Valid @RequestBody IdentificationDTO identificationDTO){
+    public IdentificationDTO crearIdentificacion(@Valid @RequestBody IdentificationDTO identificationDTO) {
         return servicioIdenficacion.saveIdentification(identificationDTO);
     }
 
     @CrossOrigin
-    @GetMapping
+    @GetMapping("/identificacion")
     @ResponseStatus(HttpStatus.OK)
-    public List<IdentificationDTO> obtenerListaIdentificacion(){
+    public List<IdentificationDTO> obtenerListaIdentificacion() {
         return servicioIdenficacion.obtenerRegistrosIdentificacion();
     }
 
+    @CrossOrigin
+    @DeleteMapping("/identificacion/{riesgo}")
+    @ResponseStatus(HttpStatus.OK)
+    public void borrarIdenditicacion(@PathVariable String riesgo) {
+        servicioIdenficacion.borrarIdentificacion(riesgo);
+
+    }
 }
