@@ -35,6 +35,5 @@ public class IdentificacionControlador {
     @ResponseStatus(HttpStatus.OK)
     public void borrarIdenditicacion(@PathVariable String riesgo) {
         servicioIdenficacion.borrarIdentificacion(riesgo);
-
     }
 }

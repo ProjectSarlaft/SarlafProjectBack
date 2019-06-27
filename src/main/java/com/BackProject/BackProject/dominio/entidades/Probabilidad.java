@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = ("Probabilidad"))
+@Table(name = ("ProbabilidadDTO"))
 public class Probabilidad {
 
     @Id
@@ -43,8 +43,13 @@ public class Probabilidad {
         return posibilidadAnual;
     }
 
-//    @Override
-//    public String toString() {
-//        return super.toString();
-//    }
+
+    @Override
+    public String toString() {
+        return "Probabilidad{" +
+                "escala='" + escala + '\'' +
+                ", nivel='" + nivel + '\'' +
+                ", posibilidadAnual='" + posibilidadAnual + '\'' +
+                '}';
+    }
 }
