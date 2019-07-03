@@ -16,7 +16,7 @@ public class Probabilidad {
     @Column(name = "Nivel")
     private String nivel;
 
-    @Column(name = "Posibilidad Anual")
+    @Column(name = "Posibilidad_Anual")
     private String posibilidadAnual;
 
     public void setEscala(String escala) {

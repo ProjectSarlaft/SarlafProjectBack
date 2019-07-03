@@ -16,19 +16,19 @@ public class Impacto {
     @Column(name = "Nivel")
     private String nivel;
 
-    @Column(name = "Afectacion Economica")
+    @Column(name = "Afectacion_Economica")
     private String afectacionEconomica;
 
-    @Column(name = "Riesgo Legal")
+    @Column(name = "Riesgo_Legal")
     private String rLegal;
 
-    @Column(name = "Riesgo Operativo")
+    @Column(name = "Riesgo_Operativo")
     private String rOperativo;
 
-    @Column(name = "Riesgo Reputacional")
+    @Column(name = "Riesgo_Reputacional")
     private String rReputacional;
 
-    @Column(name = "Riesgo Contagio")
+    @Column(name = "Riesgo_Contagio")
     private String rContagio;
 
     public String getEscala() {
