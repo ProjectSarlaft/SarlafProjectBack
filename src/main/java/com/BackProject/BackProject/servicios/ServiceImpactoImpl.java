@@ -25,6 +25,6 @@ public class ServiceImpactoImpl implements ServiceImpacto{
 
     @Override
     public void borrarImpacto(String escala) {
-
+        impactoRepositorio.deleteById(escala);
     }
 }
