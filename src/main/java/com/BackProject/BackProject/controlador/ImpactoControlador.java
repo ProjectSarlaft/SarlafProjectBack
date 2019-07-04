@@ -15,15 +15,15 @@ public class ImpactoControlador {
     }
 
     @CrossOrigin
-    @PostMapping
+    @PostMapping("/impacto")
     @ResponseStatus(HttpStatus.CREATED)
     public ImpactoDTO crearImpacto(@Valid @RequestBody ImpactoDTO impactoDTO){
         return servicioImpacto.guardarImpacto(impactoDTO);
     }
 
     @CrossOrigin
-    @DeleteMapping
-    @ResponseStatus
+    @DeleteMapping("/impacto/{escala}")
+    @ResponseStatus(HttpStatus.OK)
     // Asumiendo Escala como Primary Key
     public void borrarImpacto(@PathVariable String escala){
         servicioImpacto.borrarImpacto(escala);

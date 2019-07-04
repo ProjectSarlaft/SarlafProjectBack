@@ -29,10 +29,10 @@ public class ServicioProbabilidadImpl implements ServicioProbabilidad {
 
     @Override
     public void borrarProbabilidad(String escala) {
-        try {
+//        try {
             probabilidadRepositorio.deleteById(escala);
-        } catch (CommandAcceptanceException e) {
-            throw new NoRegistroProbabilidadException("No se encontró registro solicitado");
-        }
+//        } catch (CommandAcceptanceException e) {
+//            throw new NoRegistroProbabilidadException("No se encontró registro solicitado");
+//        }
     }
 }
