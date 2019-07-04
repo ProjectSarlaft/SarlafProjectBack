@@ -6,17 +6,17 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = ("ProbabilidadDTO"))
+@Table(name = ("Probabilidad"))
 public class Probabilidad {
 
     @Id
-    @Column(name = "Escala")
+    @Column(name = "escala")
     private String escala;
 
-    @Column(name = "Nivel")
+    @Column(name = "nivel")
     private String nivel;
 
-    @Column(name = "Posibilidad Anual")
+    @Column(name = "posibilidadAnual")
     private String posibilidadAnual;
 
     public void setEscala(String escala) {

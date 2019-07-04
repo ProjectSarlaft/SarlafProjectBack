@@ -6,30 +6,30 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "ImpactoDTO")
+@Table(name = "Impacto")
 public class Impacto {
 
     @Id
-    @Column(name = "Escala")
+    @Column(name = "escala")
     private String escala;
 
-    @Column(name = "Nivel")
+    @Column(name = "nivel")
     private String nivel;
 
-    @Column(name = "Afectacion Economica")
+    @Column(name = "afectacionEconomica")
     private String afectacionEconomica;
 
-    @Column(name = "Riesgo Legal")
-    private String rLegal;
+    @Column(name = "riesgoLegal")
+    private String riesgoLegal;
 
-    @Column(name = "Riesgo Operativo")
-    private String rOperativo;
+    @Column(name = "riesgoOperativo")
+    private String riesgoOperativo;
 
-    @Column(name = "Riesgo Reputacional")
-    private String rReputacional;
+    @Column(name = "riesgoReputacional")
+    private String riesgoReputacional;
 
-    @Column(name = "Riesgo Contagio")
-    private String rContagio;
+    @Column(name = "riesgoContagio")
+    private String riesgoContagio;
 
     public String getEscala() {
         return escala;
@@ -55,36 +55,36 @@ public class Impacto {
         this.afectacionEconomica = afectacionEconomica;
     }
 
-    public String getrLegal() {
-        return rLegal;
+    public String getRiesgoLegal() {
+        return riesgoLegal;
     }
 
-    public void setrLegal(String rLegal) {
-        this.rLegal = rLegal;
+    public void setRiesgoLegal(String riesgoLegal) {
+        this.riesgoLegal = riesgoLegal;
     }
 
-    public String getrOperativo() {
-        return rOperativo;
+    public String getRiesgoOperativo() {
+        return riesgoOperativo;
     }
 
-    public void setrOperativo(String rOperativo) {
-        this.rOperativo = rOperativo;
+    public void setRiesgoOperativo(String riesgoOperativo) {
+        this.riesgoOperativo = riesgoOperativo;
     }
 
-    public String getrReputacional() {
-        return rReputacional;
+    public String getRiesgoReputacional() {
+        return riesgoReputacional;
     }
 
-    public void setrReputacional(String rReputacional) {
-        this.rReputacional = rReputacional;
+    public void setRiesgoReputacional(String riesgoReputacional) {
+        this.riesgoReputacional = riesgoReputacional;
     }
 
-    public String getrContagio() {
-        return rContagio;
+    public String getRiesgoContagio() {
+        return riesgoContagio;
     }
 
-    public void setrContagio(String rContagio) {
-        this.rContagio = rContagio;
+    public void setRiesgoContagio(String riesgoContagio) {
+        this.riesgoContagio = riesgoContagio;
     }
 
     @Override
@@ -93,10 +93,10 @@ public class Impacto {
                 "escala='" + escala + '\'' +
                 ", nivel='" + nivel + '\'' +
                 ", afectacionEconomica='" + afectacionEconomica + '\'' +
-                ", rLegal='" + rLegal + '\'' +
-                ", rOperativo='" + rOperativo + '\'' +
-                ", rReputacional='" + rReputacional + '\'' +
-                ", rContagio='" + rContagio + '\'' +
+                ", rLegal='" + riesgoLegal + '\'' +
+                ", rOperativo='" + riesgoOperativo + '\'' +
+                ", rReputacional='" + riesgoReputacional + '\'' +
+                ", rContagio='" + riesgoContagio + '\'' +
                 '}';
     }
 }

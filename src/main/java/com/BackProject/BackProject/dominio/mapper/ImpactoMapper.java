@@ -12,10 +12,10 @@ public class ImpactoMapper {
         impacto.setEscala(impactoDTO.getEscala());
         impacto.setNivel(impactoDTO.getNivel());
         impacto.setAfectacionEconomica(impactoDTO.getAfectacionEconomica());
-        impacto.setrLegal(impactoDTO.getrLegal());
-        impacto.setrOperativo(impactoDTO.getrOperativo());
-        impacto.setrReputacional(impactoDTO.getrReputacional());
-        impacto.setrContagio(impactoDTO.getrContagio());
+        impacto.setRiesgoLegal(impactoDTO.getRiesgoLegal());
+        impacto.setRiesgoOperativo(impactoDTO.getRiesgoOperativo());
+        impacto.setRiesgoReputacional(impactoDTO.getRiesgoReputacional());
+        impacto.setRiesgoContagio(impactoDTO.getRiesgoContagio());
 
         return impacto;
     }
@@ -25,10 +25,10 @@ public class ImpactoMapper {
         impactoDTO.setEscala(impacto.getEscala());
         impactoDTO.setNivel(impacto.getNivel());
         impactoDTO.setAfectacionEconomica(impacto.getAfectacionEconomica());
-        impactoDTO.setrLegal(impacto.getrLegal());
-        impactoDTO.setrOperativo(impacto.getrOperativo());
-        impactoDTO.setrReputacional(impacto.getrReputacional());
-        impactoDTO.setrContagio(impacto.getrContagio());
+        impactoDTO.setRiesgoLegal(impacto.getRiesgoLegal());
+        impactoDTO.setRiesgoOperativo(impacto.getRiesgoOperativo());
+        impactoDTO.setRiesgoReputacional(impacto.getRiesgoReputacional());
+        impactoDTO.setRiesgoContagio(impacto.getRiesgoContagio());
 
         return impactoDTO;
     }

@@ -14,16 +14,16 @@ public class ImpactoDTO {
     private String afectacionEconomica;
 
     @NotNull
-    private String rLegal;
+    private String riesgoLegal;
 
     @NotNull
-    private String rOperativo;
+    private String riesgoOperativo;
 
     @NotNull
-    private String rReputacional;
+    private String riesgoReputacional;
 
     @NotNull
-    private String rContagio;
+    private String riesgoContagio;
 
     public String getEscala() {
         return escala;
@@ -49,35 +49,35 @@ public class ImpactoDTO {
         this.afectacionEconomica = afectacionEconomica;
     }
 
-    public String getrLegal() {
-        return rLegal;
+    public String getRiesgoLegal() {
+        return riesgoLegal;
     }
 
-    public void setrLegal(String rLegal) {
-        this.rLegal = rLegal;
+    public void setRiesgoLegal(String riesgoLegal) {
+        this.riesgoLegal = riesgoLegal;
     }
 
-    public String getrOperativo() {
-        return rOperativo;
+    public String getRiesgoOperativo() {
+        return riesgoOperativo;
     }
 
-    public void setrOperativo(String rOperativo) {
-        this.rOperativo = rOperativo;
+    public void setRiesgoOperativo(String riesgoOperativo) {
+        this.riesgoOperativo = riesgoOperativo;
     }
 
-    public String getrReputacional() {
-        return rReputacional;
+    public String getRiesgoReputacional() {
+        return riesgoReputacional;
     }
 
-    public void setrReputacional(String rReputacional) {
-        this.rReputacional = rReputacional;
+    public void setRiesgoReputacional(String riesgoReputacional) {
+        this.riesgoReputacional = riesgoReputacional;
     }
 
-    public String getrContagio() {
-        return rContagio;
+    public String getRiesgoContagio() {
+        return riesgoContagio;
     }
 
-    public void setrContagio(String rContagio) {
-        this.rContagio = rContagio;
+    public void setRiesgoContagio(String riesgoContagio) {
+        this.riesgoContagio = riesgoContagio;
     }
 }

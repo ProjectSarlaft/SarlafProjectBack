@@ -22,4 +22,9 @@ public class ServiceImpactoImpl implements ServiceImpacto{
         Impacto registroInsertadoImpacto = impactoRepositorio.save(impacto);
         return impactoMapper.impactoEntityToDTO(impacto);
     }
+
+    @Override
+    public void borrarImpacto(String escala) {
+
+    }
 }
