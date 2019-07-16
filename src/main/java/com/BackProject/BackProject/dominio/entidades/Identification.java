@@ -1,6 +1,7 @@
 package com.BackProject.BackProject.dominio.entidades;
 
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -9,13 +10,8 @@ import javax.persistence.Table;
 @Table(name = "Identification")
 public class Identification {
 
-
-    @Id
-    @Column(name = "riesgo")
-    private String riesgo;
-
-    @Column(name = "proceso")
-    private String proceso;
+    @EmbeddedId
+    private IdentificacionId identificacionId;
 
     @Column(name = "descripcion")
     private String descripcion;
@@ -44,20 +40,12 @@ public class Identification {
     @Column(name = "riesgoJurisdiccion")
     private Boolean riesgoJurisdiccion;
 
-    public String getRiesgo() {
-        return riesgo;
+    public IdentificacionId getIdentificacionId() {
+        return identificacionId;
     }
 
-    public void setRiesgo(String riesgo) {
-        this.riesgo = riesgo;
-    }
-
-    public String getProceso() {
-        return proceso;
-    }
-
-    public void setProceso(String proceso) {
-        this.proceso = proceso;
+    public void setIdentificacionId(IdentificacionId identificacionId) {
+        this.identificacionId = identificacionId;
     }
 
     public String getDescripcion() {
@@ -134,18 +122,17 @@ public class Identification {
 
     @Override
     public String toString() {
-        return "IdentificationDTO{" +
-                "riesgo='" + riesgo + '\'' +
-                ", proceso='" + proceso + '\'' +
+        return "Identification{" +
+                "identificacionId=" + identificacionId +
                 ", descripcion='" + descripcion + '\'' +
-                ", riesgoLegal='" + riesgoLegal + '\'' +
-                ", riesgoOperativo='" + riesgoOperativo + '\'' +
-                ", riesgoContagio='" + riesgoContagio + '\'' +
-                ", riesgoReputacional='" + riesgoReputacional + '\'' +
-                ", riesgoCliente='" + riesgoCliente + '\'' +
-                ", riesgoProductos='" + riesgoProductos + '\'' +
-                ", riesgoDistribucion='" + riesgoDistribucion + '\'' +
-                ", riesgoJurisdiccion='" + riesgoJurisdiccion + '\'' +
+                ", riesgoLegal=" + riesgoLegal +
+                ", riesgoOperativo=" + riesgoOperativo +
+                ", riesgoContagio=" + riesgoContagio +
+                ", riesgoReputacional=" + riesgoReputacional +
+                ", riesgoCliente=" + riesgoCliente +
+                ", riesgoProductos=" + riesgoProductos +
+                ", riesgoDistribucion=" + riesgoDistribucion +
+                ", riesgoJurisdiccion=" + riesgoJurisdiccion +
                 '}';
     }
 }

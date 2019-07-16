@@ -24,7 +24,6 @@ public class ImpactoControlador {
     @CrossOrigin
     @DeleteMapping("/impacto/{escala}")
     @ResponseStatus(HttpStatus.OK)
-    // Asumiendo Escala como Primary Key
     public void borrarImpacto(@PathVariable String escala){
         servicioImpacto.borrarImpacto(escala);
     }

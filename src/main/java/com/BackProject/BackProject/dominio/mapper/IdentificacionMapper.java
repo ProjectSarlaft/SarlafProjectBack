@@ -1,6 +1,7 @@
 package com.BackProject.BackProject.dominio.mapper;
 
 import com.BackProject.BackProject.dominio.dto.IdentificationDTO;
+import com.BackProject.BackProject.dominio.entidades.IdentificacionId;
 import com.BackProject.BackProject.dominio.entidades.Identification;
 import org.springframework.stereotype.Component;
 
@@ -9,9 +10,11 @@ public class IdentificacionMapper {
 
     public Identification identificacionDTOToEntity(IdentificationDTO identificationDTO) {
         Identification identification = new Identification();
-        identification.setRiesgo(identificationDTO.getRiesgo());
+        IdentificacionId identificacionId = new IdentificacionId();
+        identificacionId.setRiesgo(identificationDTO.getRiesgo());
+        identificacionId.setProceso(identificationDTO.getProceso());
+        identification.setIdentificacionId(identificacionId);
         identification.setDescripcion(identificationDTO.getDescripcion());
-        identification.setProceso(identificationDTO.getProceso());
         identification.setRiesgoCliente(identificationDTO.getRiesgoCliente());
         identification.setRiesgoContagio(identificationDTO.getRiesgoContagio());
         identification.setRiesgoDistribucion(identificationDTO.getRiesgoDistribucion());
@@ -26,9 +29,9 @@ public class IdentificacionMapper {
 
     public IdentificationDTO identificacionEntityToDTO(Identification identificacion) {
         IdentificationDTO identificationDto = new IdentificationDTO();
-        identificationDto.setRiesgo(identificacion.getRiesgo());
+        identificationDto.setRiesgo(identificacion.getIdentificacionId().getRiesgo());
         identificationDto.setDescripcion(identificacion.getDescripcion());
-        identificationDto.setProceso(identificacion.getProceso());
+        identificationDto.setProceso(identificacion.getIdentificacionId().getProceso());
         identificationDto.setRiesgoCliente(identificacion.getRiesgoCliente());
         identificationDto.setRiesgoContagio(identificacion.getRiesgoContagio());
         identificationDto.setRiesgoDistribucion(identificacion.getRiesgoDistribucion());
