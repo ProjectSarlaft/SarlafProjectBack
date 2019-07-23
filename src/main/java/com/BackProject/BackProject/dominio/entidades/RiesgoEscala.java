@@ -16,17 +16,6 @@ public class RiesgoEscala {
     @Column(name = "color")
     private String color;
 
-    private String escala1;
-    private String color1;
-
-    public void setEscala1(String escala1) {
-        this.escala1 = escala1;
-    }
-
-    public void setColor1(String color1) {
-        this.color1 = color1;
-    }
-
     public String getEscala() {
         return escala;
     }
@@ -44,42 +33,9 @@ public class RiesgoEscala {
     }
 
 
-    @Override
-    public String toString() {
-        return "RiesgoEscala{" +
-                "escala1='" + escala1 + '\'' +
-                ", color1='" + color1 + '\'' +
-                '}';
-    }
 }
 
-    class RiesgoEscalaRecibida{
 
-
-
-
-
-
-
-
-    private final RiesgoEscala riesgoEscala = new RiesgoEscala();
-
-    public RiesgoEscalaRecibida(){
-        Thread n1 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-            riesgoEscala.setEscala1("bajo");
-            riesgoEscala.setColor1("rojo");
-            }
-        });
-
-        n1.start();
-    }
-
-        public RiesgoEscala getRiesgoEscala() {
-            return riesgoEscala;
-        }
-    }
 
 
 

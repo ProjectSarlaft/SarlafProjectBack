@@ -11,4 +11,5 @@ public interface ServiceIdentificacion {
     List<IdentificationDTO> obtenerRegistrosIdentificacion();
 
     void borrarIdentificacion(String riesgo);
+
 }
