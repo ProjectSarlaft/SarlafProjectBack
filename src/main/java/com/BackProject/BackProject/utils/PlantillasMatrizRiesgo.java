@@ -13,10 +13,10 @@ import static com.BackProject.BackProject.utils.MatrizRiesgos.getSizeMatriz;
 public class PlantillasMatrizRiesgo {
 
     private static final String TOKEN_CONCATENAR = "x";
-    private static final RiesgoEscalaDTO riesgoEscalaBajo = new RiesgoEscalaBuilder().escalaRiesgo("Bajo").colorRiesgo("verde").build();
-    private static final RiesgoEscalaDTO riesgoEscalaMedio = new RiesgoEscalaBuilder().escalaRiesgo("Medio").colorRiesgo("amarillo").build();
-    private static final RiesgoEscalaDTO riesgoEscalaAlto = new RiesgoEscalaBuilder().escalaRiesgo("Alto").colorRiesgo("naranja").build();
-    private static final RiesgoEscalaDTO riesgoEscalaMuyAlto = new RiesgoEscalaBuilder().escalaRiesgo("Muy Alto").colorRiesgo("rojo").build();
+    private static final RiesgoEscalaDTO riesgoEscalaBajo = new RiesgoEscalaBuilder().escalaRiesgo("Bajo").colorRiesgo("#8bc34a").build();
+    private static final RiesgoEscalaDTO riesgoEscalaMedio = new RiesgoEscalaBuilder().escalaRiesgo("Medio").colorRiesgo("#cddc39").build();
+    private static final RiesgoEscalaDTO riesgoEscalaAlto = new RiesgoEscalaBuilder().escalaRiesgo("Alto").colorRiesgo("#ffc107").build();
+    private static final RiesgoEscalaDTO riesgoEscalaMuyAlto = new RiesgoEscalaBuilder().escalaRiesgo("Muy Alto").colorRiesgo("#dd2c00").build();
 
     public static List<RiesgoDTO> asignarEscalasRiesgosIniciales(List<RiesgoDTO> riesgos,
                                                               Integer sizeImpacto, Integer sizeProbabilidad) {
