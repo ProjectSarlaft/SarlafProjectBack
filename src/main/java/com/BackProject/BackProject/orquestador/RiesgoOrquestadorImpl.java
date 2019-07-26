@@ -3,10 +3,6 @@ package com.BackProject.BackProject.orquestador;
 import com.BackProject.BackProject.dominio.dto.ImpactoDTO;
 import com.BackProject.BackProject.dominio.dto.ProbabilidadDTO;
 import com.BackProject.BackProject.dominio.dto.RiesgoDTO;
-import com.BackProject.BackProject.dominio.entidades.Impacto;
-import com.BackProject.BackProject.dominio.entidades.Probabilidad;
-import com.BackProject.BackProject.dominio.entidades.Riesgo;
-import com.BackProject.BackProject.dominio.entidades.RiesgoId;
 import com.BackProject.BackProject.dominio.mapper.ImpactoMapper;
 import com.BackProject.BackProject.dominio.mapper.ProbabilidadMapper;
 import com.BackProject.BackProject.repositorios.ImpactoRepositorio;
@@ -15,10 +11,7 @@ import com.BackProject.BackProject.utils.PlantillasMatrizRiesgo;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.TreeSet;
 import java.util.stream.Collectors;
 
 import static com.BackProject.BackProject.utils.sorters.sorterUtils.organizarImpactos;

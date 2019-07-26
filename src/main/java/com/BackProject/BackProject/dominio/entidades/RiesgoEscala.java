@@ -4,11 +4,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.util.Locale;
 
 @Entity
 @Table(name = "RiesgoEscala")
 public class RiesgoEscala {
+
     @Id
     @Column(name = "escala")
     private String escala;
