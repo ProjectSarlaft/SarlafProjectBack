@@ -9,6 +9,9 @@ import com.BackProject.BackProject.repositorios.ProbabilidadRepositorio;
 import org.hibernate.tool.schema.spi.CommandAcceptanceException;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class ServicioProbabilidadImpl implements ServicioProbabilidad {
     private final ProbabilidadMapper probabilidadMapper;
@@ -29,10 +32,14 @@ public class ServicioProbabilidadImpl implements ServicioProbabilidad {
 
     @Override
     public void borrarProbabilidad(String escala) {
-//        try {
             probabilidadRepositorio.deleteById(escala);
-//        } catch (CommandAcceptanceException e) {
-//            throw new NoRegistroProbabilidadException("No se encontró registro solicitado");
-//        }
+    }
+
+    @Override
+    public List<ProbabilidadDTO> retornarProbabilidades() {
+        return probabilidadRepositorio.findAll()
+                .stream()
+                .map((probabilidad) -> probabilidadMapper.probabilidadEntidadToDTO(probabilidad))
+                .collect(Collectors.toList());
     }
 }

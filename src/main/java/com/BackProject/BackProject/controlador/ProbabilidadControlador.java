@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 public class ProbabilidadControlador {
@@ -25,8 +26,14 @@ public class ProbabilidadControlador {
     @CrossOrigin
     @DeleteMapping ("/probabilidad/{escala}")
     @ResponseStatus (HttpStatus.OK)
-    // Asumiendo Escala como Primary Key
     public void borrarProbabilidad (@PathVariable String escala){
         servicioProbabilidad.borrarProbabilidad(escala);
+    }
+
+    @CrossOrigin
+    @GetMapping ("/probabilidad")
+    @ResponseStatus(HttpStatus.OK)
+    public List<ProbabilidadDTO> retornarProbabilidades() {
+        return servicioProbabilidad.retornarProbabilidades();
     }
 }

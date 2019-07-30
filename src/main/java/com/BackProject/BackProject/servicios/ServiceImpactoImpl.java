@@ -6,6 +6,9 @@ import com.BackProject.BackProject.dominio.mapper.ImpactoMapper;
 import com.BackProject.BackProject.repositorios.ImpactoRepositorio;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class ServiceImpactoImpl implements ServiceImpacto{
     private final ImpactoRepositorio impactoRepositorio;
@@ -26,5 +29,12 @@ public class ServiceImpactoImpl implements ServiceImpacto{
     @Override
     public void borrarImpacto(String escala) {
         impactoRepositorio.deleteById(escala);
+    }
+
+    @Override
+    public List<ImpactoDTO> retornarImpactos() {
+        return impactoRepositorio.findAll().stream()
+                .map((impacto) -> impactoMapper.impactoEntityToDTO(impacto))
+                .collect(Collectors.toList());
     }
 }

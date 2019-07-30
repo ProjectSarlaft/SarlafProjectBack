@@ -6,6 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
+
 @RestController
 public class ImpactoControlador {
     private final ServiceImpacto servicioImpacto;
@@ -26,5 +28,12 @@ public class ImpactoControlador {
     @ResponseStatus(HttpStatus.OK)
     public void borrarImpacto(@PathVariable String escala){
         servicioImpacto.borrarImpacto(escala);
+    }
+
+    @CrossOrigin
+    @GetMapping("/impacto")
+    @ResponseStatus(HttpStatus.OK)
+    public List<ImpactoDTO> retornarImpactos(){
+        return servicioImpacto.retornarImpactos();
     }
 }
