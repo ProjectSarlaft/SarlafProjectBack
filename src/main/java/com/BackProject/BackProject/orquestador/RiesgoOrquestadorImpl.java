@@ -3,10 +3,13 @@ package com.BackProject.BackProject.orquestador;
 import com.BackProject.BackProject.dominio.dto.ImpactoDTO;
 import com.BackProject.BackProject.dominio.dto.ProbabilidadDTO;
 import com.BackProject.BackProject.dominio.dto.RiesgoDTO;
+import com.BackProject.BackProject.dominio.entidades.Riesgo;
 import com.BackProject.BackProject.dominio.mapper.ImpactoMapper;
 import com.BackProject.BackProject.dominio.mapper.ProbabilidadMapper;
+import com.BackProject.BackProject.dominio.mapper.RiesgoMapper;
 import com.BackProject.BackProject.repositorios.ImpactoRepositorio;
 import com.BackProject.BackProject.repositorios.ProbabilidadRepositorio;
+import com.BackProject.BackProject.repositorios.RiesgoRepositorio;
 import com.BackProject.BackProject.utils.PlantillasMatrizRiesgo;
 import org.springframework.context.annotation.Configuration;
 
@@ -22,18 +25,36 @@ public class RiesgoOrquestadorImpl implements RiesgoOrquestador {
 
     private final ImpactoRepositorio impactoRepositorio;
     private final ProbabilidadRepositorio probabilidadRepositorio;
+    private final RiesgoRepositorio riesgoRepositorio;
+
     private final ImpactoMapper impactoMapper;
     private final ProbabilidadMapper probabilidadMapper;
+    private final RiesgoMapper riesgoMapper;
 
-    public RiesgoOrquestadorImpl(ImpactoRepositorio impactoRepositorio, ProbabilidadRepositorio probabilidadRepositorio, ImpactoMapper impactoMapper, ProbabilidadMapper probabilidadMapper) {
+    public RiesgoOrquestadorImpl(ImpactoRepositorio impactoRepositorio, ProbabilidadRepositorio probabilidadRepositorio, RiesgoRepositorio riesgoRepositorio, ImpactoMapper impactoMapper, ProbabilidadMapper probabilidadMapper, RiesgoMapper riesgoMapper) {
         this.impactoRepositorio = impactoRepositorio;
         this.probabilidadRepositorio = probabilidadRepositorio;
+        this.riesgoRepositorio = riesgoRepositorio;
         this.impactoMapper = impactoMapper;
         this.probabilidadMapper = probabilidadMapper;
+        this.riesgoMapper = riesgoMapper;
     }
 
     @Override
     public List<RiesgoDTO> creacionMatrizRiesgo() {
+
+        List<Riesgo> riesgos = riesgoRepositorio.findAll();
+        if(riesgos.isEmpty()) {
+            return crearMatrizRiesgos();
+        } else {
+            return riesgos.stream()
+                    .map((riesgo) -> riesgoMapper.riesgoEntityToRiesgoDTO(riesgo))
+                    .collect(Collectors.toList());
+        }
+    }
+
+    private List<RiesgoDTO> crearMatrizRiesgos() {
+        List<RiesgoDTO> riesgosDTO = new ArrayList<>();
 
         // 1. Recuperar Impactos DB
         List<ImpactoDTO> impactos =  impactoRepositorio.findAll()
@@ -52,18 +73,22 @@ public class RiesgoOrquestadorImpl implements RiesgoOrquestador {
         //todo Pasar a functional programming
 
         // 3. Crear Lista de riesgos con informacion de Probabilidad e Impacto
-        List<RiesgoDTO> riesgos = new ArrayList<>();
+
         for (ImpactoDTO impacto: impactos) {
             for (ProbabilidadDTO probabilidad: probabilidades) {
-                crearRegistroRiesgo(riesgos, impacto, probabilidad);
+                crearRegistroRiesgo(riesgosDTO, impacto, probabilidad);
             }
         }
 
         // 4. Crear las plantillas.
-        PlantillasMatrizRiesgo.asignarEscalasRiesgosIniciales(riesgos, impactos.size(), probabilidades.size());
+        PlantillasMatrizRiesgo.asignarEscalasRiesgosIniciales(riesgosDTO, impactos.size(), probabilidades.size());
 
-        // Insertar en DB
-        return riesgos;
+        // 5. Insertar en DB
+        riesgosDTO.stream()
+                .map((riesgo) -> riesgoMapper.riesgoDtoToEntity(riesgo))
+                .forEach((riesgo) -> riesgoRepositorio.save(riesgo) );
+
+        return riesgosDTO;
     }
 
     private void crearRegistroRiesgo(List<RiesgoDTO> riesgos, ImpactoDTO impacto, ProbabilidadDTO probabilidad) {

@@ -1,5 +1,6 @@
     package com.BackProject.BackProject.dominio.entidades;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -16,16 +17,16 @@ public class Riesgo implements Serializable {
     @EmbeddedId
     private RiesgoId riesgoId;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "Impacto_escala")
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "impacto_escala")
     private Impacto impacto;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "Probabilidad_escala")
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "probabilidad_escala")
     private Probabilidad probabilidad;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "RiesgoEscala_escala")
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "riesgoEscala_escala")
     private RiesgoEscala riesgoEscala;
 
     public RiesgoId getRiesgoId() {
