@@ -2,6 +2,8 @@ package com.BackProject.BackProject.dominio.entidades;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,6 +12,9 @@ import javax.persistence.Table;
 public class Impacto {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Long id;
+
     @Column(name = "escala")
     private String escala;
 
@@ -30,6 +35,14 @@ public class Impacto {
 
     @Column(name = "riesgoContagio")
     private String riesgoContagio;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getEscala() {
         return escala;
@@ -90,13 +103,14 @@ public class Impacto {
     @Override
     public String toString() {
         return "Impacto{" +
-                "escala='" + escala + '\'' +
+                "id=" + id +
+                ", escala='" + escala + '\'' +
                 ", nivel='" + nivel + '\'' +
                 ", afectacionEconomica='" + afectacionEconomica + '\'' +
-                ", rLegal='" + riesgoLegal + '\'' +
-                ", rOperativo='" + riesgoOperativo + '\'' +
-                ", rReputacional='" + riesgoReputacional + '\'' +
-                ", rContagio='" + riesgoContagio + '\'' +
+                ", riesgoLegal='" + riesgoLegal + '\'' +
+                ", riesgoOperativo='" + riesgoOperativo + '\'' +
+                ", riesgoReputacional='" + riesgoReputacional + '\'' +
+                ", riesgoContagio='" + riesgoContagio + '\'' +
                 '}';
     }
 }

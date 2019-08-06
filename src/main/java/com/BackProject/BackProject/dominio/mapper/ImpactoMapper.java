@@ -22,6 +22,7 @@ public class ImpactoMapper {
 
     public ImpactoDTO impactoEntityToDTO(Impacto impacto){
         ImpactoDTO impactoDTO = new ImpactoDTO();
+        impactoDTO.setId(impacto.getId());
         impactoDTO.setEscala(impacto.getEscala());
         impactoDTO.setNivel(impacto.getNivel());
         impactoDTO.setAfectacionEconomica(impacto.getAfectacionEconomica());

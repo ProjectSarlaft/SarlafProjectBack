@@ -11,6 +11,13 @@ import java.util.function.Supplier;
 public class varargs {
 
     public static void main(String[] args) {
+        // abbadd
+        // a
+        /*
+        a
+        ab
+
+         */
         Supplier<Object> objectSupplier = () -> new Object();
         Supplier<String> stringSupploer = () -> "hi there";
         Supplier<List<String>> arraySupller = () -> Arrays.asList("hola", "como", "estas");
