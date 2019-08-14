@@ -15,16 +15,12 @@ public class ImpactoDTO {
     @NotNull
     private String afectacionEconomica;
 
-    @NotNull
     private String riesgoLegal;
 
-    @NotNull
     private String riesgoOperativo;
 
-    @NotNull
     private String riesgoReputacional;
 
-    @NotNull
     private String riesgoContagio;
 
     public Long getId() {

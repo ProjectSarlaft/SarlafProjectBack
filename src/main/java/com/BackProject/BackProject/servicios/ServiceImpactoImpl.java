@@ -3,11 +3,13 @@ package com.BackProject.BackProject.servicios;
 import com.BackProject.BackProject.dominio.dto.ImpactoDTO;
 import com.BackProject.BackProject.dominio.entidades.Impacto;
 import com.BackProject.BackProject.dominio.mapper.ImpactoMapper;
+import com.BackProject.BackProject.exceptions.EmptyIdException;
 import com.BackProject.BackProject.exceptions.InsercionImpactoException;
 import com.BackProject.BackProject.repositorios.ImpactoRepositorio;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -27,8 +29,7 @@ public class ServiceImpactoImpl implements ServiceImpacto {
             throw new InsercionImpactoException();
         }
         Impacto impacto = impactoMapper.impactoDTOToEntity(impactoDTO);
-        impacto = impactoRepositorio.save(impacto);
-        return impactoMapper.impactoEntityToDTO(impacto);
+        return impactoMapper.impactoEntityToDTO(impactoRepositorio.save(impacto));
     }
 
     @Override
@@ -36,6 +37,8 @@ public class ServiceImpactoImpl implements ServiceImpacto {
         if(estaEscalaImpactoEnUso(impactoDTO)){
             throw new InsercionImpactoException();
         }
+        Optional.of(impactoDTO.getId()).orElseThrow(() -> new EmptyIdException());
+
         Impacto impacto = impactoRepositorio.findById(impactoDTO.getId()).get();
         impacto.setEscala(impactoDTO.getEscala());
         impacto.setNivel(impactoDTO.getNivel());
