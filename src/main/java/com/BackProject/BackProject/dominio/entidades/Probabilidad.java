@@ -1,15 +1,15 @@
 package com.BackProject.BackProject.dominio.entidades;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = ("Probabilidad"))
 public class Probabilidad {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Long id;
+
     @Column(name = "escala")
     private String escala;
 
@@ -18,6 +18,11 @@ public class Probabilidad {
 
     @Column(name = "posibilidadAnual")
     private String posibilidadAnual;
+
+    public Long getId(){
+        return id;
+    }
+
 
     public void setEscala(String escala) {
         this.escala = escala;

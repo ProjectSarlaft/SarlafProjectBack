@@ -26,7 +26,7 @@ public class ProbabilidadControlador {
     @CrossOrigin
     @DeleteMapping ("/probabilidad/{escala}")
     @ResponseStatus (HttpStatus.OK)
-    public void borrarProbabilidad (@PathVariable String escala){
+    public void borrarProbabilidad (@PathVariable Long escala){
         servicioProbabilidad.borrarProbabilidad(escala);
     }
 
@@ -35,5 +35,12 @@ public class ProbabilidadControlador {
     @ResponseStatus(HttpStatus.OK)
     public List<ProbabilidadDTO> retornarProbabilidades() {
         return servicioProbabilidad.retornarProbabilidades();
+    }
+
+    @CrossOrigin
+    @PutMapping ("/probabilidad")
+    @ResponseStatus(HttpStatus.OK)
+    public ProbabilidadDTO actualizarProbabilidad(@RequestBody ProbabilidadDTO probabilidadDTO){
+        return servicioProbabilidad.actualizarProbabilidad(probabilidadDTO);
     }
 }

@@ -6,6 +6,12 @@ public class RiesgoEscalaDTO {
 
     private String color;
 
+    private Long id;
+
+    public Long getId(){
+        return id;
+    }
+
     public String getEscala() {
         return escala;
     }

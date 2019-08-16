@@ -4,6 +4,8 @@ import javax.validation.constraints.NotNull;
 
 public class ProbabilidadDTO {
 
+    private Long id;
+
     @NotNull
     private String escala;
 
@@ -12,6 +14,10 @@ public class ProbabilidadDTO {
 
     @NotNull
     private String posibilidadAnual;
+
+    public Long getId(){
+        return id;
+    }
 
     public String getEscala() {
         return escala;
