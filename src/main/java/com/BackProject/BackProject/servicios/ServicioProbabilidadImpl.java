@@ -52,11 +52,14 @@ public class ServicioProbabilidadImpl implements ServicioProbabilidad {
             throw new InsercionProbabilidadException();
         }
         Optional.of(probabilidadDTO.getId()).orElseThrow(() -> new EmptyIdException());
+
         Probabilidad probabilidad = probabilidadRepositorio.findById(probabilidadDTO.getId()).get();
         probabilidad.setEscala(probabilidadDTO.getEscala());
         probabilidad.setNivel(probabilidadDTO.getNivel());
         probabilidad.setPosibilidadAnual(probabilidadDTO.getPosibilidadAnual());
-        return probabilidadMapper.probabilidadEntidadToDTO(probabilidad);
+        Probabilidad probabilidadActualizada = probabilidadRepositorio.save(probabilidad);
+
+        return probabilidadMapper.probabilidadEntidadToDTO(probabilidadActualizada);
 
     }
 
