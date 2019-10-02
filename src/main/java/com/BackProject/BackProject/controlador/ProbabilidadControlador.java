@@ -24,10 +24,10 @@ public class ProbabilidadControlador {
     }
 
     @CrossOrigin
-    @DeleteMapping ("/probabilidad/{escala}")
+    @DeleteMapping ("/probabilidad/{probabilidadId}")
     @ResponseStatus (HttpStatus.OK)
-    public void borrarProbabilidad (@PathVariable String escala){
-        servicioProbabilidad.borrarProbabilidad(escala);
+    public void borrarProbabilidad (@PathVariable Long probabilidadId){
+        servicioProbabilidad.borrarProbabilidad(probabilidadId);
     }
 
     @CrossOrigin

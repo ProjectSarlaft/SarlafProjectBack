@@ -27,12 +27,12 @@ public class ServicioProbabilidadImpl implements ServicioProbabilidad {
     public ProbabilidadDTO guardarProbabilidad(ProbabilidadDTO probabilidadDTO) {
         Probabilidad probabilidad = probabilidadMapper.probabilidadDTOtoEntidad(probabilidadDTO);
         Probabilidad registroInsertadoProbabilidad = probabilidadRepositorio.save(probabilidad);
-        return probabilidadMapper.probabilidadEntidadToDTO(probabilidad);
+        return probabilidadMapper.probabilidadEntidadToDTO(registroInsertadoProbabilidad);
     }
 
     @Override
-    public void borrarProbabilidad(String escala) {
-            probabilidadRepositorio.deleteById(escala);
+    public void borrarProbabilidad(Long probabilidadId) {
+            probabilidadRepositorio.deleteById(probabilidadId);
     }
 
     @Override

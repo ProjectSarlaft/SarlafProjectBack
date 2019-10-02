@@ -37,12 +37,6 @@ public class ImpactoControlador {
         return servicioImpacto.retornarImpactos();
     }
 
-    //Method PUT
-    // url /impacto
-    // Request Body
-    // if  verificar que la escala no este para otro id -> hago update
-    // si no -> No actualizo mando mensaje la llave ya existe.
-
     @CrossOrigin
     @PutMapping("/impacto")
     @ResponseStatus(HttpStatus.OK)
