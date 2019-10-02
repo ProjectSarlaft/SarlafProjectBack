@@ -21,7 +21,6 @@ public class ProbabilidadMapper {
         probabilidadDTO.setEscala(probabilidad.getEscala());
         probabilidadDTO.setNivel(probabilidad.getNivel());
         probabilidadDTO.setPosibilidadAnual(probabilidad.getPosibilidadAnual());
-
         return probabilidadDTO;
     }
 

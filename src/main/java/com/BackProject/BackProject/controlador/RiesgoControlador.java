@@ -3,15 +3,15 @@ package com.BackProject.BackProject.controlador;
 import com.BackProject.BackProject.dominio.dto.ImpactoDTO;
 import com.BackProject.BackProject.dominio.dto.ProbabilidadDTO;
 import com.BackProject.BackProject.dominio.dto.RiesgoDTO;
+import com.BackProject.BackProject.dominio.dto.RiesgoEscalaDTO;
 import com.BackProject.BackProject.servicios.ServiceRiesgo;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 @RestController
 public class RiesgoControlador {
@@ -52,5 +52,26 @@ public class RiesgoControlador {
         */
         return serviceRiesgo.crearMatrizRiesgo();
 
+    }
+
+    @CrossOrigin
+    @GetMapping("/riesgoEscala")
+    @ResponseStatus(HttpStatus.OK)
+    public List<RiesgoEscalaDTO> recuperarRiesgoEscala(){
+        return serviceRiesgo.retornarRiesgoEscala();
+    }
+
+    @CrossOrigin
+    @DeleteMapping("/riesgo/{riesgoEscala}")
+    @ResponseStatus (HttpStatus.OK)
+    public void borrarRiesgoEscala(@PathVariable String escala){
+         serviceRiesgo.borrarRiesgoEscala(escala);
+    }
+
+    @CrossOrigin
+    @PostMapping("/riesgoEscala")
+    @ResponseStatus(HttpStatus.CREATED)
+    public RiesgoEscalaDTO crearRiesgoEscala(@Valid @RequestBody RiesgoEscalaDTO riesgoEscalaDTO){
+        return serviceRiesgo.guardarRiesgoEscala(riesgoEscalaDTO);
     }
 }

@@ -1,20 +1,24 @@
 package com.BackProject.BackProject.dominio.entidades;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "RiesgoEscala")
 public class RiesgoEscala {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Long id;
+
     @Column(name = "escala")
     private String escala;
 
     @Column(name = "color")
     private String color;
+
+    public Long getId(){
+        return id;
+    }
 
     public String getEscala() {
         return escala;

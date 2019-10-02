@@ -10,4 +10,6 @@ public interface ServicioProbabilidad {
     void borrarProbabilidad(Long probabilidadId);
 
     List<ProbabilidadDTO> retornarProbabilidades();
+
+    ProbabilidadDTO actualizarProbabilidad(ProbabilidadDTO probabilidadDTO);
 }

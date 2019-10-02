@@ -36,4 +36,11 @@ public class ProbabilidadControlador {
     public List<ProbabilidadDTO> retornarProbabilidades() {
         return servicioProbabilidad.retornarProbabilidades();
     }
+
+    @CrossOrigin
+    @PutMapping ("/probabilidad")
+    @ResponseStatus(HttpStatus.OK)
+    public ProbabilidadDTO actualizarProbabilidad(@RequestBody ProbabilidadDTO probabilidadDTO){
+        return servicioProbabilidad.actualizarProbabilidad(probabilidadDTO);
+    }
 }
