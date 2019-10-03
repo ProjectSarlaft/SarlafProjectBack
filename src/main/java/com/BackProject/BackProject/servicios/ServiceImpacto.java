@@ -5,6 +5,7 @@ import com.BackProject.BackProject.dominio.dto.ImpactoDTO;
 import java.util.List;
 
 public interface ServiceImpacto {
+
     ImpactoDTO guardarImpacto (ImpactoDTO impacto);
 
     ImpactoDTO actualizarImpacto(ImpactoDTO impactoDTO);
