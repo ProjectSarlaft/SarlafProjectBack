@@ -36,8 +36,8 @@ public class RiesgoControlador {
     @CrossOrigin
     @DeleteMapping("/riesgo/{riesgoEscala}")
     @ResponseStatus (HttpStatus.OK)
-    public void borrarRiesgoEscala(@PathVariable String escala){
-         serviceRiesgo.borrarRiesgoEscala(escala);
+    public void borrarRiesgoEscala(@PathVariable Long riesgoEscalaId){
+         serviceRiesgo.borrarRiesgoEscala(riesgoEscalaId);
     }
 
     @CrossOrigin

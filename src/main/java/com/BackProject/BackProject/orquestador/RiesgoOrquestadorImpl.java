@@ -84,19 +84,17 @@ public class RiesgoOrquestadorImpl implements RiesgoOrquestador {
         PlantillasMatrizRiesgo.asignarEscalasRiesgosIniciales(riesgosDTO, impactos.size(), probabilidades.size());
 
         // 5. Insertar en DB
-        riesgosDTO.stream()
+        return riesgosDTO.stream()
                 .map((riesgo) -> riesgoMapper.riesgoDtoToEntity(riesgo))
-                .forEach((riesgo) -> riesgoRepositorio.save(riesgo) );
-
-        return riesgosDTO;
+                .map((riesgoEntity) -> riesgoRepositorio.save(riesgoEntity))
+                .map((riesgoEntitySaved) -> riesgoMapper.riesgoEntityToRiesgoDTO(riesgoEntitySaved))
+                .collect(Collectors.toList());
     }
 
     private void crearRegistroRiesgo(List<RiesgoDTO> riesgos, ImpactoDTO impacto, ProbabilidadDTO probabilidad) {
         RiesgoDTO riesgoDTO = new RiesgoDTO();
         riesgoDTO.setImpacto(impacto);
         riesgoDTO.setProbabilidad(probabilidad);
-        riesgoDTO.setEscalaImpacto(impacto.getEscala());
-        riesgoDTO.setEscalaProbabilidad(probabilidad.getEscala());
         riesgos.add(riesgoDTO);
 
     }

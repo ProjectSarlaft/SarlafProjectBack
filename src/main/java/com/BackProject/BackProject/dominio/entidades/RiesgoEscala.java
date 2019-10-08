@@ -7,17 +7,20 @@ import javax.persistence.*;
 public class RiesgoEscala {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;
+    @Column(name = "color")
+    private String color;
 
     @Column(name = "escala")
     private String escala;
 
-    @Column(name = "color")
-    private String color;
+    private String accion;
 
-    public Long getId(){
-        return id;
+    public String getAccion() {
+        return accion;
+    }
+
+    public void setAccion(String accion) {
+        this.accion = accion;
     }
 
     public String getEscala() {
