@@ -39,7 +39,7 @@ public class ServiceRiesgoImpl implements ServiceRiesgo {
     }
 
     @Override
-    public void borrarRiesgoEscala(Long riesgoEscalaId) {
+    public void borrarRiesgoEscala(String riesgoEscalaId) {
         riesgoEscalaRepositorio.deleteById(riesgoEscalaId);
     }
 

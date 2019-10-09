@@ -11,7 +11,7 @@ public interface ServiceRiesgo {
 
     List<RiesgoEscalaDTO> retornarRiesgoEscala();
 
-    void borrarRiesgoEscala(Long riesgoEscalaId);
+    void borrarRiesgoEscala(String riesgoEscalaId);
 
     RiesgoEscalaDTO guardarRiesgoEscala(RiesgoEscalaDTO riesgoEscalaDTO);
 }
