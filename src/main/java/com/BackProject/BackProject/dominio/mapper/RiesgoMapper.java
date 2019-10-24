@@ -2,7 +2,6 @@ package com.BackProject.BackProject.dominio.mapper;
 
 import com.BackProject.BackProject.dominio.dto.RiesgoDTO;
 import com.BackProject.BackProject.dominio.entidades.Riesgo;
-import com.BackProject.BackProject.dominio.entidades.RiesgoId;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -22,25 +21,20 @@ public class RiesgoMapper {
 
     public Riesgo riesgoDtoToEntity(RiesgoDTO riesgoDTO){
         Riesgo riesgo = new Riesgo();
-
-        RiesgoId riesgoId = new RiesgoId();
-        riesgoId.setEscalaProbabilidad(riesgoDTO.getEscalaProbabilidad());
-        riesgoId.setEscalaImpacto(riesgoDTO.getEscalaImpacto());
         riesgo.setImpacto(impactoMapper.impactoDTOToEntity(riesgoDTO.getImpacto()));
         riesgo.setProbabilidad(probabilidadMapper.probabilidadDTOtoEntidad(riesgoDTO.getProbabilidad()));
         riesgo.setRiesgoEscala(riesgoEscalaMapper.riesgoEscalaDtoToEntity(riesgoDTO.getRiesgoEscala()));
-        riesgo.setRiesgoId(riesgoId);
+        riesgo.setId(riesgoDTO.getRiesgoId());
 
         return riesgo;
     }
 
     public RiesgoDTO riesgoEntityToRiesgoDTO(Riesgo riesgo) {
         RiesgoDTO riesgoDTO = new RiesgoDTO();
-        riesgoDTO.setEscalaImpacto(riesgo.getRiesgoId().getEscalaImpacto());
-        riesgoDTO.setEscalaProbabilidad(riesgo.getRiesgoId().getEscalaProbabilidad());
         riesgoDTO.setImpacto(impactoMapper.impactoEntityToDTO(riesgo.getImpacto()));
         riesgoDTO.setProbabilidad(probabilidadMapper.probabilidadEntidadToDTO(riesgo.getProbabilidad()));
         riesgoDTO.setRiesgoEscala(riesgoEscalaMapper.riesgoEscalaEntityToDto(riesgo.getRiesgoEscala()));
+        riesgoDTO.setRiesgoId(riesgo.getId());
 
         return riesgoDTO;
     }

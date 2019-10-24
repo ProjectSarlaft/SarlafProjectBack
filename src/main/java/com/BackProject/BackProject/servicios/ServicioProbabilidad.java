@@ -7,7 +7,9 @@ import java.util.List;
 public interface ServicioProbabilidad {
     ProbabilidadDTO guardarProbabilidad(ProbabilidadDTO probabilidad);
 
-    void borrarProbabilidad(String escala);
+    void borrarProbabilidad(Long probabilidadId);
 
     List<ProbabilidadDTO> retornarProbabilidades();
+
+    ProbabilidadDTO actualizarProbabilidad(ProbabilidadDTO probabilidadDTO);
 }

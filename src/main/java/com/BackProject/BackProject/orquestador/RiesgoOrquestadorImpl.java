@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static com.BackProject.BackProject.utils.sorters.sorterUtils.organizarImpactos;
+import static com.BackProject.BackProject.utils.sorters.sorterUtils.organizarMatrizRiesgo;
 import static com.BackProject.BackProject.utils.sorters.sorterUtils.organizarProbabilidad;
 
 @Configuration
@@ -49,6 +50,7 @@ public class RiesgoOrquestadorImpl implements RiesgoOrquestador {
         } else {
             return riesgos.stream()
                     .map((riesgo) -> riesgoMapper.riesgoEntityToRiesgoDTO(riesgo))
+                    .sorted(organizarMatrizRiesgo)
                     .collect(Collectors.toList());
         }
     }
@@ -83,20 +85,19 @@ public class RiesgoOrquestadorImpl implements RiesgoOrquestador {
         // 4. Crear las plantillas.
         PlantillasMatrizRiesgo.asignarEscalasRiesgosIniciales(riesgosDTO, impactos.size(), probabilidades.size());
 
-        // 5. Insertar en DB
-        riesgosDTO.stream()
+        // 5. Insertar en DB y retornar DTO
+        return riesgosDTO.stream()
                 .map((riesgo) -> riesgoMapper.riesgoDtoToEntity(riesgo))
-                .forEach((riesgo) -> riesgoRepositorio.save(riesgo) );
-
-        return riesgosDTO;
+                .map((riesgoEntity) -> riesgoRepositorio.save(riesgoEntity))
+                .map((riesgoEntitySaved) -> riesgoMapper.riesgoEntityToRiesgoDTO(riesgoEntitySaved))
+                .sorted(organizarMatrizRiesgo)
+                .collect(Collectors.toList());
     }
 
     private void crearRegistroRiesgo(List<RiesgoDTO> riesgos, ImpactoDTO impacto, ProbabilidadDTO probabilidad) {
         RiesgoDTO riesgoDTO = new RiesgoDTO();
         riesgoDTO.setImpacto(impacto);
         riesgoDTO.setProbabilidad(probabilidad);
-        riesgoDTO.setEscalaImpacto(impacto.getEscala());
-        riesgoDTO.setEscalaProbabilidad(probabilidad.getEscala());
         riesgos.add(riesgoDTO);
 
     }

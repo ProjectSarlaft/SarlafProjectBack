@@ -5,36 +5,40 @@ import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import java.io.Serializable;
 
-    @Entity
+@Entity
 @Table(name = "riesgo")
 public class Riesgo implements Serializable {
 
-    @EmbeddedId
-    private RiesgoId riesgoId;
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Long id;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "impacto_escala")
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @JoinColumn(name = "impacto_id")
     private Impacto impacto;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "probabilidad_escala")
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @JoinColumn(name = "probabilidad_id")
     private Probabilidad probabilidad;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "riesgoEscala_escala")
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @JoinColumn(name = "riesgoEscala_id")
     private RiesgoEscala riesgoEscala;
 
-    public RiesgoId getRiesgoId() {
-        return riesgoId;
+    public Long getId() {
+        return id;
     }
 
-    public void setRiesgoId(RiesgoId riesgoId) {
-        this.riesgoId = riesgoId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Impacto getImpacto() {
@@ -63,8 +67,8 @@ public class Riesgo implements Serializable {
 
     @Override
     public String toString() {
-        return "RiesgoControlador{" +
-                "riesgoId=" + riesgoId +
+        return "Riesgo{" +
+                "id=" + id +
                 ", impacto=" + impacto +
                 ", probabilidad=" + probabilidad +
                 ", riesgoEscala=" + riesgoEscala +

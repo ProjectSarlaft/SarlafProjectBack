@@ -4,6 +4,8 @@ import javax.validation.constraints.NotNull;
 
 public class ImpactoDTO {
 
+    private Long id;
+
     @NotNull
     private String escala;
 
@@ -13,17 +15,21 @@ public class ImpactoDTO {
     @NotNull
     private String afectacionEconomica;
 
-    @NotNull
     private String riesgoLegal;
 
-    @NotNull
     private String riesgoOperativo;
 
-    @NotNull
     private String riesgoReputacional;
 
-    @NotNull
     private String riesgoContagio;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getEscala() {
         return escala;

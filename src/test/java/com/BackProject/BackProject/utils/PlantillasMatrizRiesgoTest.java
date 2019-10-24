@@ -58,8 +58,6 @@ public class PlantillasMatrizRiesgoTest {
 
     private RiesgoDTO crearRegistroRiesgo(Integer registro) {
         RiesgoDTO riesgoDTO = new RiesgoDTO();
-        riesgoDTO.setEscalaProbabilidad(registro.toString());
-        riesgoDTO.setEscalaImpacto(registro.toString());
         riesgoDTO.setProbabilidad(new ProbabilidadDTO());
         riesgoDTO.setImpacto(new ImpactoDTO());
 

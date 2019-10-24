@@ -6,12 +6,22 @@ public class RiesgoEscalaDTO {
 
     private String color;
 
+    private String accion;
+
     public String getEscala() {
         return escala;
     }
 
     public void setEscala(String escala) {
         this.escala = escala;
+    }
+
+    public String getAccion() {
+        return accion;
+    }
+
+    public void setAccion(String accion) {
+        this.accion = accion;
     }
 
     public String getColor() {

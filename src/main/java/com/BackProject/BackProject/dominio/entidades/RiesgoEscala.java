@@ -1,20 +1,27 @@
 package com.BackProject.BackProject.dominio.entidades;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "RiesgoEscala")
 public class RiesgoEscala {
 
     @Id
+    @Column(name = "color")
+    private String color;
+
     @Column(name = "escala")
     private String escala;
 
-    @Column(name = "color")
-    private String color;
+    private String accion;
+
+    public String getAccion() {
+        return accion;
+    }
+
+    public void setAccion(String accion) {
+        this.accion = accion;
+    }
 
     public String getEscala() {
         return escala;

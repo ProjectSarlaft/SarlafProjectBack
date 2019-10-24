@@ -24,10 +24,10 @@ public class ImpactoControlador {
     }
 
     @CrossOrigin
-    @DeleteMapping("/impacto/{escala}")
+    @DeleteMapping("/impacto/{impactoID}")
     @ResponseStatus(HttpStatus.OK)
-    public void borrarImpacto(@PathVariable String escala){
-        servicioImpacto.borrarImpacto(escala);
+    public void borrarImpacto(@PathVariable Long impactoID){
+        servicioImpacto.borrarImpacto(impactoID);
     }
 
     @CrossOrigin
@@ -35,5 +35,12 @@ public class ImpactoControlador {
     @ResponseStatus(HttpStatus.OK)
     public List<ImpactoDTO> retornarImpactos(){
         return servicioImpacto.retornarImpactos();
+    }
+
+    @CrossOrigin
+    @PutMapping("/impacto")
+    @ResponseStatus(HttpStatus.OK)
+    public ImpactoDTO actualizarImpacto(@RequestBody ImpactoDTO impactoDTO){
+        return servicioImpacto.actualizarImpacto(impactoDTO);
     }
 }

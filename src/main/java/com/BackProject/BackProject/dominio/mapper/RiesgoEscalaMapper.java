@@ -12,6 +12,7 @@ public class RiesgoEscalaMapper {
         RiesgoEscala riesgoEscala = new RiesgoEscala();
         riesgoEscala.setColor(riesgoEscalaDTO.getColor());
         riesgoEscala.setEscala(riesgoEscalaDTO.getEscala());
+        riesgoEscala.setAccion(riesgoEscalaDTO.getAccion());
 
         return riesgoEscala;
     }
@@ -20,6 +21,7 @@ public class RiesgoEscalaMapper {
         RiesgoEscalaDTO riesgoEscalaDTO = new RiesgoEscalaDTO();
         riesgoEscalaDTO.setEscala(riesgoEscala.getEscala());
         riesgoEscalaDTO.setColor(riesgoEscala.getColor());
+        riesgoEscalaDTO.setAccion(riesgoEscala.getAccion());
 
         return riesgoEscalaDTO;
     }

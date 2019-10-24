@@ -2,9 +2,7 @@ package com.BackProject.BackProject.dominio.dto;
 
 public class RiesgoDTO {
 
-    private String escalaImpacto;
-
-    private String escalaProbabilidad;
+    private Long riesgoId;
 
     private ImpactoDTO impacto;
 
@@ -12,20 +10,12 @@ public class RiesgoDTO {
 
     private RiesgoEscalaDTO riesgoEscala;
 
-    public String getEscalaImpacto() {
-        return escalaImpacto;
+    public Long getRiesgoId() {
+        return riesgoId;
     }
 
-    public void setEscalaImpacto(String escalaImpacto) {
-        this.escalaImpacto = escalaImpacto;
-    }
-
-    public String getEscalaProbabilidad() {
-        return escalaProbabilidad;
-    }
-
-    public void setEscalaProbabilidad(String escalaProbabilidad) {
-        this.escalaProbabilidad = escalaProbabilidad;
+    public void setRiesgoId(Long riesgoId) {
+        this.riesgoId = riesgoId;
     }
 
     public ImpactoDTO getImpacto() {
