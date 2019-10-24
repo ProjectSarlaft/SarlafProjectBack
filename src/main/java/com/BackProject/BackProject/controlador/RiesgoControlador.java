@@ -28,24 +28,4 @@ public class RiesgoControlador {
 
     }
 
-    @CrossOrigin
-    @GetMapping("/riesgoEscala")
-    @ResponseStatus(HttpStatus.OK)
-    public List<RiesgoEscalaDTO> recuperarRiesgoEscala(){
-        return serviceRiesgo.retornarRiesgoEscala();
-    }
-
-    @CrossOrigin
-    @DeleteMapping("/riesgoEscala")
-    @ResponseStatus (HttpStatus.OK)
-    public void borrarRiesgoEscala(@Valid @RequestBody RiesgoEscalaIdDto riesgoEscalaIdDto){
-         serviceRiesgo.borrarRiesgoEscala(riesgoEscalaIdDto.getRiesgoEscalaId());
-    }
-
-    @CrossOrigin
-    @PostMapping("/riesgoEscala")
-    @ResponseStatus(HttpStatus.CREATED)
-    public RiesgoEscalaDTO crearRiesgoEscala(@Valid @RequestBody RiesgoEscalaDTO riesgoEscalaDTO){
-        return serviceRiesgo.guardarRiesgoEscala(riesgoEscalaDTO);
-    }
 }

@@ -16,13 +16,10 @@ import java.util.stream.Collectors;
 public class ServiceRiesgoImpl implements ServiceRiesgo {
 
     private final RiesgoOrquestador riesgoOrquestador;
-    private final RiesgoEscalaRepositorio riesgoEscalaRepositorio;
-    private final RiesgoEscalaMapper riesgoEscalaMapper;
 
-    public ServiceRiesgoImpl(RiesgoOrquestador riesgoOrquestador, RiesgoEscalaRepositorio riesgoEscalaRepositorio, RiesgoEscalaMapper riesgoEscalaMapper) {
+
+    public ServiceRiesgoImpl(RiesgoOrquestador riesgoOrquestador) {
         this.riesgoOrquestador = riesgoOrquestador;
-        this.riesgoEscalaRepositorio = riesgoEscalaRepositorio;
-        this.riesgoEscalaMapper = riesgoEscalaMapper;
     }
 
     @Override
@@ -30,23 +27,6 @@ public class ServiceRiesgoImpl implements ServiceRiesgo {
         return riesgoOrquestador.creacionMatrizRiesgo();
     }
 
-    @Override
-    public List<RiesgoEscalaDTO> retornarRiesgoEscala() {
-        return riesgoEscalaRepositorio.findAll()
-                .stream()
-                .map((riesgoEscala) -> riesgoEscalaMapper.riesgoEscalaEntityToDto(riesgoEscala))
-                .collect(Collectors.toList());
-    }
 
-    @Override
-    public void borrarRiesgoEscala(String riesgoEscalaId) {
-        riesgoEscalaRepositorio.deleteById(riesgoEscalaId);
-    }
-
-    @Override
-    public RiesgoEscalaDTO guardarRiesgoEscala(RiesgoEscalaDTO riesgoEscalaDTO) {
-        RiesgoEscala riesgoEscala = riesgoEscalaMapper.riesgoEscalaDtoToEntity(riesgoEscalaDTO);
-        return riesgoEscalaMapper.riesgoEscalaEntityToDto(riesgoEscalaRepositorio.save(riesgoEscala));
-    }
 
 }

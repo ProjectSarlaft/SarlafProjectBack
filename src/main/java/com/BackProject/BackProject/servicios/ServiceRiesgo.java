@@ -9,9 +9,4 @@ public interface ServiceRiesgo {
 
     List<RiesgoDTO> crearMatrizRiesgo();
 
-    List<RiesgoEscalaDTO> retornarRiesgoEscala();
-
-    void borrarRiesgoEscala(String riesgoEscalaId);
-
-    RiesgoEscalaDTO guardarRiesgoEscala(RiesgoEscalaDTO riesgoEscalaDTO);
 }
